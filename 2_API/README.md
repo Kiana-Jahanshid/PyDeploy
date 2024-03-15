@@ -4,18 +4,27 @@
 
 ### plantNet part :
 run this command in terminal :
-``` python plantNet.py --plant_name "rose" ```
+
+``` 
+python plantNet.py --plant_name "rose" 
+```
 
 
 ### fastAPI part :
 
 + 1. first run this command in terminal :
-```uvicorn create_API:app --reload```
+```
+uvicorn create_API:app --reload
+```
+<br>
+
 Uvicorn running on http://127.0.0.1:8000 
 
-+ 2. then, for running API_user.py :
++ 2. then, for running API_user.py : <br>
 we should open another TERMINAL , and then run it . 
-``` python API_user.py ```
+``` 
+python API_user.py 
+```
 
 # Results :
 
