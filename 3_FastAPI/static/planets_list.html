@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>solar system</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         .tab1 {
             tab-size: 2;
@@ -15,10 +16,11 @@
         }
 
         h1{
-            color: rgb(228, 14, 107);
-            font-size: 40px;
+            color: rgb(254, 21, 145);
+            font-size: 50px;
             text-align: center;
             font-family: sans-serif;
+            align-items: center;
        }
 
        h6{
@@ -32,16 +34,47 @@
             font-family: sans-serif;
             color:  rgb(238, 248, 255);
             text-align:justify ;
-
         }
-
+        li{
+            font-size: 30px;
+            font-family: sans-serif;
+            color:  rgb(238, 248, 255);
+            text-align:justify ;
+            row-gap: 20px;
+            padding-bottom: 15px;
+            
+        }
         body{
             background-image: url('static/img/planets.jpg');
             background-repeat: no-repeat;
-            background-size: 100%;
+            background-size: 160%;
+            max-width: 100%;
+            height:auto;         
         }
 
-        
+        div{
+            -moz-column-count: 3;
+            -moz-column-gap: 1px;
+            -webkit-column-count: 3;
+            -webkit-column-gap: 1px;
+            column-count: 3;
+            column-gap: 1px;
+            row-gap: 25px;
+            text-indent: 20px;
+            align-items: center ;
+            padding-left: 78px;
+        }
+        ul{
+            align-items:center;
+            row-gap: 25px;
+            padding-left: 85px;
+        }
+        p{
+            text-align: center;
+            align-items: center;
+            row-gap: 20px;
+            padding-left: 25px;
+        }
     </style>
 </head>
 
@@ -50,17 +83,22 @@
     <br>
     <br>
     <h1>Planets List</h1> 
+    <br>
+    <br>
     <p>
-        <pre class="tab4">                                        1_ Sun</pre>
-        <pre class="tab4">                                        2_ Mercury</pre>
-        <pre class="tab4">                                        3_ Venus</pre>
-        <pre class="tab4">                                        4_ Earth</pre>
-        <pre class="tab4">                                        5_ Mars</pre>
-        <pre class="tab4">                                        6_ Jupiter</pre>
-        <pre class="tab4">                                        7_ Saturn</pre>
-        <pre class="tab4">                                        8_ Uranus</pre>
-        <pre class="tab4">                                        9_ Neptune</pre>
-
+        <div>
+            <ul>
+                <li>Sun</li>
+                <li>Mercury</li>
+                <li>Venus</li>
+                <li>Earth</li>
+                <li>Mars</li>            
+                <li>Jupiter</li>
+                <li>Saturn</li>
+                <li>Uranus</li>
+                <li>Neptune</li>
+            </ul>
+        </div>
     </p>
 
 </body>

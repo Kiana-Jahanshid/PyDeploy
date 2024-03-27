@@ -1,22 +1,16 @@
 <html>
 <head>
     <title>solar system</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .tab1 {
-            tab-size: 2;
-        }
- 
-        .tab2 {
-            tab-size: 4;
-        }
- 
+
         .tab4 {
             tab-size: 8;
         }
 
         h1{
             color: rgb(144, 81, 231);
-            font-size: 38px;
+            font-size: 41px;
             text-align: center;
             font-family: sans-serif;
        }
@@ -27,21 +21,49 @@
             text-align: center;
             font-family: sans-serif;
        }
-        pre{
+
+        body{
+            
+            background-image:  url('static/img/galaxy.jpg'); 
+            background-repeat: no-repeat;
+            background-size: 140%;
+            max-width: 200%;
+            height: auto;
+        }
+        ul{
             font-size: 25px;
             font-family: sans-serif;
             color:  rgb(238, 248, 255);
+            text-align:center ;
+            padding-left: 320px;
+            align-items: center;
+        }
+        li{
             text-align:justify ;
+            row-gap: 20px;
+            padding-bottom: 15px;
+            padding-left: 20px;
 
         }
-
-        body{
-            background-image: url('static/img/galaxy.jpg');
-            background-repeat: no-repeat;
-            background-size: 100%;
+        div{
+            -moz-column-count: 1;
+            -moz-column-gap: 1px;
+            -webkit-column-count: 1;
+            -webkit-column-gap: 1px;
+            column-count: 1;
+            column-gap: 1px;
+            row-gap: 20px;
+            align-items: center ;
+            padding-left: 1px;
+            text-align: center;
+            position: absolute;
+            margin: auto;
         }
-
-        
+        p{
+            text-align: center;
+            align-items: center;
+            
+        }
     </style>
 </head>
 
@@ -51,13 +73,17 @@
     <br>
     <h1>About This API </h1> 
     <h6>This API is related to SOLAR SYSTEM and its planets </h6>
+    <br>
     <p>
-        <pre class="tab4">                                        1_ if you use  '/planets'  you will get a list of all solar system planets .</pre>
-        <pre class="tab4">                                        2_ if you use  '/planets/{planet_name}'  you will get the information of that specific planet.</pre>
-        <pre class="tab4">                                        3_ if you use  '/planets/{planet_name}/image'  you will get its picture .</pre>
-        
+        <div>
+            <ul>
+                <li>if you use  <b><span style="color: #03a3fa">'/planets'</span></b>  you will get a list of all solar system planets .</li>
+                <li>if you use  <b><span style="color: #03a3fa">'/planets/{planet_name}'</span></b>  you will get the information of that specific planet.</li>
+                <li>if you use  <b><span style="color: #03a3fa">'/planets/{planet_name}/image'</span></b>  you will get its picture.</li>
+            </ul>
+        </div>
     </p>
-
+    
 </body>
 </html>
  

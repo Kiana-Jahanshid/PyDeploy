@@ -1,14 +1,14 @@
 import os
 from typing import Union 
-from fastapi import FastAPI , HTTPException , status , Response , Request
+from fastapi import FastAPI , HTTPException , status , Response , Request 
 from fastapi.responses import HTMLResponse , FileResponse , StreamingResponse
 import cv2
 import numpy as np
 import io
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-
-
+import json
+import requests
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static" ))
@@ -83,7 +83,9 @@ def show_a_planet_info(planet_name: str):
              }
         }
 
-        return planets[planet_name]
+        response = requests.get(f"https://pydeploy-bfas.onrender.com/planets/{planet_name}")
+        return json.loads(response.text)
+         
 
 
 @app.get("/planets/{planet_name}/image")
