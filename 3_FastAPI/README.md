@@ -47,24 +47,32 @@ so we need to use this url ``` https://pydeploy-bfas.onrender.com ``` to use our
 ## ------------------------------------------------------------------------------------------------------------------------
 
 # How to run :
-paste these links in browser :
+paste these links in your browser :
 <br>
-information about API : 
+<br>
+
++ 1_ information about API : 
 ```
 https://pydeploy-bfas.onrender.com/
 ```
 <br>
-show list of all planets :
+
++ 2_ show list of all planets :
+
 ```
 https://pydeploy-bfas.onrender.com/planets
 ```
 <br>
-show information about just one planet , which added in the last part of below url :
+
++ 3_ show information about just one planet , which added in the last part of below url :
+<br>
+
 ```
 https://pydeploy-bfas.onrender.com/planets/{planet_name}
 ```
 <br>
-show image of defined single planet :
+
++ 4_show image of defined single planet :
 ```
 https://pydeploy-bfas.onrender.com/planets/{planet_name}/image
 ```
