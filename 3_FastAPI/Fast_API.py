@@ -82,9 +82,20 @@ def show_a_planet_info(planet_name: str):
                     "information" : "info"                   
              }
         }
-
-        response = requests.get(f"https://pydeploy-bfas.onrender.com/planets/{planet_name}")
-        return json.loads(response.text)
+        keys = []
+        values = []
+        for i in range(len(planets[planet_name])):
+            keys.append(list(planets[planet_name].keys())[i])
+            values.append(list(planets[planet_name].values())[i])
+        a = {keys[0]: values[0] }
+        b = {keys[1]: values[1] }
+        c = {keys[2]: values[2] }
+        d = {keys[3]: values[3] }
+        json_str = '\n'.join([json.dumps(a, default=str), json.dumps(b, default=str), json.dumps(c, default=str) , json.dumps(d, default=str)])
+        json_str = json_str.replace("{", "")
+        json_str = json_str.replace("}", "")
+        return Response(json_str, media_type='application/json') 
+         
          
 
 
