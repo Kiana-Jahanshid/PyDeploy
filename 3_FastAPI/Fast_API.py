@@ -8,7 +8,6 @@ import io
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import json
-import requests
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static" ))

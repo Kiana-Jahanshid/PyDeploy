@@ -44,5 +44,28 @@ we also should update port number in postman url address
 used free host : render.com <br>
 so we need to use this url ``` https://pydeploy-bfas.onrender.com ``` to use our API , like this : <br>
 
-paste this link in browser , 
+## ------------------------------------------------------------------------------------------------------------------------
+
+# How to run :
+paste these links in browser :
+<br>
+information about API : 
+```
+https://pydeploy-bfas.onrender.com/
+```
+<br>
+show list of all planets :
+```
+https://pydeploy-bfas.onrender.com/planets
+```
+<br>
+show information about just one planet , which added in the last part of below url :
+```
+https://pydeploy-bfas.onrender.com/planets/{planet_name}
+```
+<br>
+show image of defined single planet :
+```
+https://pydeploy-bfas.onrender.com/planets/{planet_name}/image
+```
 
