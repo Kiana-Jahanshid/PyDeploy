@@ -18,9 +18,11 @@ async def introduction(request: Request):
         #     data = fh.read()
         return FileResponse("static/information.html")#HTMLResponse(content=data, media_type="html")
 
+
 @app.get("/planets")
 def planet_list():
     return FileResponse("static/planets_list.html")
+
 
 @app.get("/planets/{planet_name}")
 def show_a_planet_info(planet_name: str):
@@ -96,7 +98,6 @@ def show_a_planet_info(planet_name: str):
         return Response(json_str, media_type='application/json') 
          
          
-
 
 @app.get("/planets/{planet_name}/image")
 def image_of_a_planet(planet_name : str):

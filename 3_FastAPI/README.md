@@ -75,7 +75,7 @@ paste these links in your browser :
 ```
 https://pydeploy-bfas.onrender.com/
 ```
-![img]("assets/about.JPG")
+![img](assets/about.JPG)
 
 <br>
 
@@ -84,7 +84,7 @@ https://pydeploy-bfas.onrender.com/
 ```
 https://pydeploy-bfas.onrender.com/planets
 ```
-![img]("assets/list.JPG")
+![img](assets/list.JPG)
 <br>
 
 + 3_ show information about just one planet , which added in the last part of below url :
@@ -99,6 +99,6 @@ https://pydeploy-bfas.onrender.com/planets/{planet_name}
 ```
 https://pydeploy-bfas.onrender.com/planets/{planet_name}/image
 ```
-![img]("assets/1.JPG")
-![img]("assets/2.JPG")
-![img]("assets/3.JPG")
+![img](assets/1.JPG)
+![img](assets/2.JPG)
+![img](assets/3.JPG)
