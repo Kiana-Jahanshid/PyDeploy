@@ -1,0 +1,4 @@
+fastapi
+numpy
+easyocr
+opencv-python
