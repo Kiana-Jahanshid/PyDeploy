@@ -52,7 +52,7 @@ just add task's id in its field :
 http://127.0.0.1:8000/delete_task/{id}
 ```
 
-# Reults :
+# Results :
 redoc :
 <br>
 
