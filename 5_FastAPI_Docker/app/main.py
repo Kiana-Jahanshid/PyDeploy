@@ -16,6 +16,10 @@ def print_db(cursor):
         db_rows.append({"id" : f"{row[0]}" , "title": f"{row[1]}" , "description": f"{row[2]}", "time": f"{row[3]}", "status": f"{row[4]}"})
     return db_rows
 
+@app.get("/")
+def root():
+    return "welcome to todo-app .... please use ' POSTMAN ' (instead of browsers) to select an API Method at first ."
+
 
 @app.get("/read_db")
 def read_database():
