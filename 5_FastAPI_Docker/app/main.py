@@ -7,7 +7,7 @@ app = FastAPI()
 
 #create a connection to an SQLite database:
 def create_connection():
-    connection = sqlite3.connect("todo.db")
+    connection = sqlite3.connect("app/todo.db")
     return connection
 
 def print_db(cursor):

@@ -111,6 +111,7 @@ for example : ``` docker rm tender_solomon ```
 # _______________________________________________________
 
 # GOAL 
+## Create Docker for FastAPI :
 here we want to run a FastAPI project in docker (not in our os ) or virtual machine . but we didnt find a vm for FastAPI (in ducker hub). SO we should create a docker for it
 
 
