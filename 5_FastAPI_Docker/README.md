@@ -1,35 +1,72 @@
 # FastAPI - Docker 
 
+# Description :
+here, we want to create docker image for FastAPI . bc there isnt any in 
+[docker hub]("hub.docker.com") for FastAPI .
 
-## Docker :
+<br>
+
+# How to run :
+liara's docs :
+```
+https://fastapi-todo-app.liara.run/docs
+```
+
+
+## In postman :
++ Read database : (use GET metod in postman)
+```
+https://fastapi-todo-app.liara.run/read_db
+```
++ Add new task to database : ( use POST method in postman)
+```
+https://fastapi-todo-app.liara.run/add_task/{id}/{title}/{description}/{time}/{status}
+```
+
++ update or edit a task : (use PUT in postman)
+```
+https://fastapi-todo-app.liara.run/update_task/{id}/{field_name}/{new_field_value}
+```
+
++ delete a task : (use DELETE in postman)
+```
+https://fastapi-todo-app.liara.run/delete_task/{id}
+```
+
+# ____________________________________________________________________________
+
+# Docker :
 
 + Docker can have many "Images" (like classes in oop). <br>
 + then , we can have some "CONTAINERS" from an "Image" (like class objects )
 
-## example :
+### example :
 
 + how to bring a docker (like hello-world docker)into our system :
 in this [link](https://hub.docker.com/_/hello-world) you can copy it's command and paste it in terminal : <br>
 ### 1_ ```docker pull hello-world``` 
 <br>
+
+### 2_ ```docker pull python```
 then write : <br>
 
 ```docker images```
 <br>
-NOW we have ONE IMAGE : <br>
+
+NOW we have 2 IMAGE : 
 ```
 REPOSITORY     TAG        IMAGE ID         CREATED        SIZE 
 python         latest     6cbe1053f244    2 weeks ago     1.02GB
 hello-world    latest     d2c94e258dcb    11 months ago   13.3kB 
 ```
 
-### 2_ ```docker pull python```
+
 ### 3_ ```docker pull tensorflow/tensorflow```
 ### 4_ ```docker pull pytorch/pytorch```
 ----------------------------------------------
 <br>
 
-## terminal commands  : <br>
+## commands  : <br>
 
 + # ```docker images``` :
 shows all docker images which are pulled in terminal .
@@ -40,6 +77,7 @@ shows list of only RUNNIG containers
 + # ```docker ps -a``` : 
 shows list of all containers (even exited ones)
 <br>
+
 ----------------------------------------------------------
 
 # [How to build a Docker image for FastAPI :](https://fastapi.tiangolo.com/deployment/docker/) (from scratch)
@@ -122,22 +160,16 @@ here we want to run a FastAPI project in docker (not in our os ) or virtual mach
 ## 2_ paste below codes from [FastAPI website](https://fastapi.tiangolo.com/deployment/docker/) into Dockerfile :
 these are our docker layers :
 ```
-# 
 FROM python
 
-# 
 WORKDIR /code
-
-# 
+ 
 COPY ./requirements.txt /code/requirements.txt
 
-# 
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
-
-# 
+ 
 COPY ./app /code/app
 
-# 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
 ```
 <br>
@@ -146,94 +178,60 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
 .
 ├── app
 │   └── main.py
-│
 ├── Dockerfile
 └── requirements.txt
+```
+# 3_ How to build a docker Image :
 
-```
-# 3_ Now , build a docker  , so run this command :
-```
-docker build -t <desired_name> . 
-```
-like ``` docker build -t kiki . ```
+ 
++ ## ``` docker build -t <docker-image>   .  ```
 
-now we have 3 Images . 
-```
-REPOSITORY    TAG       IMAGE ID       CREATED          SIZE
-kiki          latest    342c9791cd4d   49 seconds ago   1.04GB
-python        latest    6cbe1053f244   2 weeks ago      1.02GB
-hello-world   latest    d2c94e258dcb   11 months ago    13.3kB
-``` 
-
-the SIZE of new image is equal to = python SIZE + hello-world SIZE
-
-+ now we should run a container from new Image .
-so : <br>
-
-```
-docker run -d --name myname -p 80:80 kiki
-```
-output :  1d780c52539f5a0efa9f6fd89f324fc1c5d32d3e07d347f913120b219473e7a7 
 <br>
 
-+ type ``` docker ps ``` ,  then we can see it's running :
-```
-CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                NAMES
-1d780c52539f   kiki      "uvicorn app.main:ap…"   2 minutes ago   Up 2 minutes   0.0.0.0:80->80/tcp   modest_curie
-7dcfdb670a76   python    "bash"                   2 hours ago     Up 2 hours                          relaxed_keller
-```
 
-therefore , because it's running  , we can use it .<br>
+# 4_ start & run a docker container : <br>
 
-```
-http://127.0.0.1/items/5?q=somequery 
-```
-and check it . 
-```
-http://127.0.0.1/docs
-```
++ ## ```docker run -d --name myname -p 80:80 <docker-image>```
 
 
-# how to delete docker container that has built from kiki's Image  ?
+# ____________________________________________________________________________
+
+
+# how to delete docker container  ?
 ```
-├── kiki's Image
-│   └── Container ──> modest_curie 
+├── Image
+│   └── Container ──> container-NAMES 
 ```
-### if we run ``` docker rm modest_curie``` , we will face this error , bc docker container is running : 
+if we run ``` docker rm container-NAMES``` , we will face this error , bc docker container is running : 
 
 ``` 
-cannot remove container "/modest_curie": container is running : stop the container before removing .
+cannot remove container "/container-NAMES": container is running : stop the container before removing .
 ```
 <br>
 
-## 1_ ```docker stop modest_curie``` --> exited
-## 2_ ```docker rm modest_curie```
+## 1_ ```docker stop container-NAMES``` --> exited
+## 2_ ```docker rm container-NAMES```
 
-# _______________________________________
-## how to delete python's docker container ?
-### 1_ ``` docker stop relaxed_keller```
-### 2_ ``` docker rm relaxed_keller ```
 
 
 
 # _________________________________________
-## make sure to delete all containers (Exited or running)
-### ``` docker ps -a ```
-now all of the 3 Images are Unused .
++ ## make sure to delete all containers (Exited or running) :
+## ``` docker ps -a ```
 
 
+<br>
+<br>
+<br>
 
 
+# Create a docker for FastAPI :
 
-
-# ترتیب انجام دستورات برای اجرای تودولیست
-
-## 1_ docker pull python
-<!-- ## docker pull nouchka/sqlite3
-## docker run -it nouchka/sqlite3 -->
-## 2_ docker build -t todo .
-## 3_ docker run -d -p 80:80 todo
-
++ ## 0_ pip install -r requirements.txt (fastapi  ,pydantic, uvicorn )
++ ## 1_ docker pull python
++ ## 2_ docker build -t <docker-Image> 
++ ## 3_ docker run -d -p 80:80 <docker-Image>
++ ## 4_ ckeck it using liara or http://127.0.0.1/ localhost 
 
 
 
