@@ -63,6 +63,7 @@ hello-world    latest     d2c94e258dcb    11 months ago   13.3kB
 
 ### 3_ ```docker pull tensorflow/tensorflow```
 ### 4_ ```docker pull pytorch/pytorch```
+### 5_ ....
 ----------------------------------------------
 <br>
 
@@ -99,16 +100,16 @@ for example :<br>
 until now , we have two images .
 and one container .
 if we run ```docker run hello-world``` again , therefore we will have TWO docker CONTAINERS (from hello-world image )
-+ containers :
-![img](assets/containers.JPG)
++ containers : <br>
+<img src ="assets/containers.JPG"  width="500" />
+
 <br>
 
 + Images : <br>
-![img](assets/images.JPG)
-
+<img src ="assets/images.JPG"  width="500" />
 ------------------------------------------
 
-by runnig this command ```docker run python``` didn't anything happend . so we should add ```-it``` :  -it  means making command's run INTERACTIVE .
+by runnig ```docker run python``` didn't anything happend . so we should add ```-it``` :  which means making command's run INTERACTIVE .
 ### ```docker run -it python bash ```
 <br>
 
@@ -140,7 +141,7 @@ for example : ``` docker rm tender_solomon ```
 
 # GOAL 
 ## Create Docker for FastAPI :
-here we want to run a FastAPI project in docker (not in our os ) or virtual machine . but we didnt find a vm for FastAPI (in ducker hub). SO we should create a docker for it
+here we want to run a FastAPI project in docker (not in our os ) or virtual machine . but we didn't find a vm for FastAPI (in ducker hub). SO we should create a docker for it
 
 
 --------------------------------
@@ -221,7 +222,7 @@ cannot remove container "/container-NAMES": container is running : stop the cont
 + ## 1_ docker pull python
 + ## 2_ docker build -t <docker-Image> 
 + ## 3_ docker run -d -p 80:80 <docker-Image>
-+ ## 4_ ckeck it using liara or http://127.0.0.1/ localhost 
++ ## 4_ check it using liara or http://127.0.0.1/ localhost 
 
 
 
