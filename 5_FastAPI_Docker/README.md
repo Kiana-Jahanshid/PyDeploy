@@ -103,38 +103,28 @@ if we run ```docker run hello-world``` again , therefore we will have TWO docker
 ![img](assets/containers.JPG)
 <br>
 
-+ Images :
++ Images : <br>
 ![img](assets/images.JPG)
 
 ------------------------------------------
 
-by runnig this command ```docker run python``` didnt anything happend . <br>
-so we should add ```-it``` :
+by runnig this command ```docker run python``` didn't anything happend . so we should add ```-it``` :  -it  means making command's run INTERACTIVE .
 ### ```docker run -it python bash ```
 <br>
 
--it : means making command's run INTERACTIVE .
 
-+ after runnig this command we enter to docker environment ! : <br>
+
++ after runnig this command we enter to docker environment : <br>
 ``` root@7dcfdb670a76:/# ```
-+ here it remains in docker and didnt exit from it & its status stay in runnig mode . ``` root@7dcfdb670a76:/# ```
-+ here , docker container is running .
-+ if we type ```docker ps -a``` in None docker terminal , we will have : <br>
-```
-CONTAINER ID   IMAGE         COMMAND     CREATED          STATUS                      PORTS     NAMES
-7dcfdb670a76   python        "bash"      3 minutes ago    Up 3 minutes                          relaxed_keller
-c4ab3c35e3ab   python        "python3"   22 minutes ago   Exited (0) 22 minutes ago             eloquent_booth
-a7a127fbf36b   hello-world   "/hello"    54 minutes ago   Exited (0) 54 minutes ago             affectionate_rhodes
-545876914cbc   hello-world   "/hello"    10 hours ago     Exited (0) 10 hours ago               tender_solomon 
-``` 
++ here it remains in docker and didnt exit from it & its status stay in runnig mode (docker container is running ).
++ if we type ```docker ps -a``` in None docker terminal , we will have list of containers .
 
 
 <br>
 
 -----------------------------
 # How to delete a docker  : 
-(dead) containers that are exited , Taking up the system space  .
-so we have to delete them : <br>
+(dead) containers that are exited , Taking up the system space  . so we have to delete them : <br>
 
 ``` 
 docker rm <NAMES> 
