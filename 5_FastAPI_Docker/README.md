@@ -74,7 +74,7 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
 ├── Dockerfile
 └── requirements.txt
 ```
-# 3_ How to build a docker Image :
++ # How to build a docker Image :
 
  
 + ### ``` docker build -t <docker-image>   .  ```
@@ -82,7 +82,7 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
 <br>
 
 
-# 4_ start & run a docker container : <br>
++ # start & run a docker container : <br>
 
 + ### ```docker run -d --name myname -p 80:80 <docker-image>```
 
