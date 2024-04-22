@@ -33,6 +33,12 @@ in liara :
 ``` 
 SQLALCHEMY_DATABASE_URL  =  "postgresql://root:VNBfwH6bUSEcOi8PyWzi3LLb@university-db:5432/postgres"
 ```
+
+then :
+```
+docker run -p 5432:5432 --name some-postgres -e POSTGRES_PASSWORD=33 -e POSTGRES_USER=kiki -e POSTGRES_DB=university -d postgres
+```
+
 now , our code will connect to liara's database .
 
 

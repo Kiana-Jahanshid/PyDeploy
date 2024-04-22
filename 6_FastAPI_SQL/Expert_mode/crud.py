@@ -8,8 +8,8 @@ from sqlalchemy.orm import Session # this will allow you to declare the type of 
 from . import models, schemas # (SQLAlchemy models) and (the Pydantic models / schemas).
 from fastapi import FastAPI , HTTPException
 
-def create_a_student(db : Session , student:schemas.Student) :
-    new_student = models.Student(fristname= student.firstname , lastname = student.lastname , average = student.average , graduated = student.graduated)
+def create_a_student(db : Session , student:schemas.StudentCreate) :
+    new_student = models.Student(firstname= student.firstname , lastname = student.lastname , average = student.average , graduated = student.graduated)
     db.add(new_student)
     db.commit()
     db.refresh(new_student)
@@ -27,58 +27,70 @@ def show_database(db :Session , skip: int = 0):
 
 
 def delete_student(db:Session , student_id:int):
-    student = db.query(models.Student).filter(models.Student.id == student_id).first()
-    if student is None :
+    stu = db.query(models.Student).filter(models.Student.id == student_id).first()
+    if stu is None :
         raise HTTPException(status_code=404 , detail="student not found")
-    db.delete(student)
+    db.delete(stu)
     db.commit()
     return {"message" : "student deleted successfully"}
 
 
-def edit_student_info(db:Session , student_id:int , edit_field:str , field_value:list[str,float,bool,int]):
-    student = db.query(models.Student).filter(models.Student.id == student_id).first()
+def edit_student_info(db:Session , student_id:int ,field:str, new_value: str|int  , student: schemas.StudentCreate):
+    selected_stu = db.query(models.Student).filter(models.Student.id == student_id).first()
 
-    if edit_field == "firstname" :
-        student.firstname = field_value
-    elif edit_field == "lastname" :
-        student.lastname = field_value
-    elif edit_field == "average" :
-        student.average = field_value
-    elif edit_field == "graduated" :
-        student.graduated = field_value
+    if field == "firstname" :
+        selected_stu.firstname = new_value
+    elif field == "lastname" :
+        selected_stu.lastname = new_value
+    elif field == "average" :
+        selected_stu.average = new_value
+    elif field == "graduated" :
+        selected_stu.graduated == new_value 
 
     db.commit()
-    db.refresh(student)
-    return student
+    db.refresh(selected_stu)
+    return selected_stu
 
 #----------------------------------------------
 
-def create_student_course(db: Session , course: schemas.Course , student_id:int):
+def create_student_course(db: Session , student_id:int ,course: schemas.Course ):
     st_course = models.Course(**course.model_dump() , owner_id=student_id)
     db.add(st_course)
     db.commit()
     db.refresh(st_course)
     return st_course
 
-
-
-# def edit_course_info(db:Session , course_name:str ):
-#     selected_course = db.query(models.Course).filter(models.Course.name == course_name).first()
-
-#     if selected_course is None  : 
-#         raise HTTPException(status_code=404 , detail="course not found")
-
-#     if type(field_value) is str :
-#         crud.edit_course_info()
-#     elif type(field_value) is int :
-#     if course_field == "name" :
-#         stu_course.name = course_field_value
-#     elif course_field == "unit" :
-#         stu_course.unit = course_field_value
-
-
+def get_course_info(db: Session , course_id: int):
+    course = db.query(models.Course).filter(models.Course.id == course_id).first()
+    return course
 
 def show_all_courses(db:Session , skip:int=0 ):
     courses_db = db.query(models.Course).offset(skip).all()
     return courses_db
+
+def edit_course_info(db:Session , course_id:int ,field:str, new_value: str|int  , course: schemas.CourseCreate):
+    selected_course = db.query(models.Course).filter(models.Course.id == course_id).first()
+    if field == "name" :
+        selected_course.name = new_value
+    elif field == "unit" :
+        selected_course.unit = new_value
+    elif field == "owner_id" :
+        selected_course.owner_id = new_value
+    db.commit()
+    db.refresh(selected_course)
+    return selected_course
+
+
+def delete_course(db:Session , course_id:int):
+    course = db.query(models.Course).filter(models.Course.id == course_id).first()
+    if course is None :
+        raise HTTPException(status_code=404 , detail="course not found")
+    db.delete(course)
+    db.commit()
+    return {"message" : "course deleted successfully"}
+
+
+
+
+
 
