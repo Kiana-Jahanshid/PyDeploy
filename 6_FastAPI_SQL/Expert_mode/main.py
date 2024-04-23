@@ -2,7 +2,6 @@ from sqlalchemy.orm import Session # this will allow you to declare the type of 
 from . import models, schemas , crud # (SQLAlchemy models) and (the Pydantic models / schemas).
 from fastapi import FastAPI , HTTPException , Depends
 from .database import SessionLocal, Engine
-import numpy as np
 
 
 models.Base.metadata.create_all(bind=Engine)

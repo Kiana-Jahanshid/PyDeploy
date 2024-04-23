@@ -6,7 +6,8 @@ it means that , we can connect to sqlite and PostgreSQL with the same code .
 here we want to connet FastAPI to SQL databases
 
 # ORM (Object Relational Mapping):
-its a tool that manage relation between objects (in class) and tables (in database) .
+its a tool that manage relation between objects (in class) and tables (in database) . <br>
+
 <img src= "assets/ORM.JPG" width=400px  />
 
 
@@ -20,42 +21,53 @@ then open ``` http://127.0.0.1:8000/docs ``` in your browser and test all of it'
 
 
 + ## Expert mode :
+you only need to enter this url in your browser :<br>
+```
+https://fastapi-todo-app.liara.run/docs
+```
 
+# ---------------------------
+
+## step by step Explanation :
+## test in localhost (postgresql):
 + 1- docker pull postgres
-+ 2_ test in local system : ``` uvicorn university:app --reload ```
-make sure that API is connected to postgresql database .
-+ 3- test in liara's posgresql database : 
-enter postgresql database address in ```DATABASE_URL``` variable in university file . then check its connection . <br>
-in liara : 
-<br> first we create a [postgres database](https://console.liara.ir/databases/create) 
++ 2- write this url in ```database``` file : 
+```
+SQLALCHEMY_DATABASE_URL = "postgresql://username:pass@localhost:5432/db-name"
+```
++ 3- 
+```
+docker run -p 5432:5432 --name some-postgres -e POSTGRES_PASSWORD=pass -e POSTGRES_USER=username -e POSTGRES_DB=db-name -d postgres 
+ ```
 
-<br> then in 'نحوه اتصال' tab , it will give us a URL  , which is our ```DATABASE_URL``` :
++ 4_ run this command : ``` uvicorn Expert_mode.main:app --reload ```
+
++ 5- open ``` http://127.0.0.1:8000/docs ``` url to test methods.
+
+
+## test in liara : 
++ 1- first we create a [postgres database](https://console.liara.ir/databases/create) 
+
++ 2- then in 'نحوه اتصال' tab , it will give us a URL  , which is our ```DATABASE_URL``` value :
 ``` 
 SQLALCHEMY_DATABASE_URL  =  "postgresql://root:VNBfwH6bUSEcOi8PyWzi3LLb@university-db:5432/postgres"
 ```
 
-then :
+we will paste it in ``` database.py ``` file .
+
++ 3- run in lara :
 ```
-docker run -p 5432:5432 --name some-postgres -e POSTGRES_PASSWORD=33 -e POSTGRES_USER=kiki -e POSTGRES_DB=university -d postgres
+npx liara login
+npx liara deploy --> enter port 80 
+
+then open this link :
+https://fastapi-todo-app.liara.run/docs
+
 ```
 
-now , our code will connect to liara's database .
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-+ how to download only a folder in a repository (not a whole repository) ?
-https://download-directory.github.io/
 
 
 

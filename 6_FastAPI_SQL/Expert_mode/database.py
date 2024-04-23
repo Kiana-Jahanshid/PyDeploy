@@ -2,12 +2,15 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-
+# use these 2 line for running postgres in localhost
 # docker run -p 5432:5432 --name some-postgres -e POSTGRES_PASSWORD=33 -e POSTGRES_USER=kiki -e POSTGRES_DB=university -d postgres
 #SQLALCHEMY_DATABASE_URL = "postgresql://kiki:33@localhost:5432/university"
-SQLALCHEMY_DATABASE_URL  =   "sqlite:///./database.db" # "postgresql://root:VNBfwH6bUSEcOi8PyWzi3LLb@university-db:5432/postgres"
-# psql -h university-db -p 5432 -U root -W postgres
-#SQLALCHEMY_DATABASE_URL  =  "postgresql://root:VNBfwH6bUSEcOi8PyWzi3LLb@university-db:5432/postgres"
+
+# use this line for sqlite db
+#SQLALCHEMY_DATABASE_URL  =   "sqlite:///./database.db" 
+
+# use this line when using liara
+SQLALCHEMY_DATABASE_URL  =  "postgresql://root:VNBfwH6bUSEcOi8PyWzi3LLb@university-db:5432/postgres"
 # Create the SQLAlchemy engine
 Engine = create_engine(SQLALCHEMY_DATABASE_URL)
 # Create a SessionLocal class
