@@ -3,7 +3,7 @@
 FROM python
 
 #WORKDIR /8_streamlit/counter_app
-WORKDIR /8_streamlit/counter_app/app
+WORKDIR /8_streamlit/counter_app
 RUN git clone https://github.com/Kiana-Jahanshid/PyDeploy.git .
 
 RUN pip3 install -r requirements.txt
