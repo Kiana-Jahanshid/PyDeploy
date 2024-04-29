@@ -1,19 +1,19 @@
+# Sync / Async 
 
++ useful link : [async](https://fastapi.tiangolo.com/async/)
 
-+ ### useful link : [async](https://fastapi.tiangolo.com/async/)
-
-# How to install :
+## How to install :
 ```
 pip install -r requirements.txt
 ```
 
 
-# How to run :
+## How to run :
 ```
 python rhyme_finder.py
 ```
 
-# Description :
+## Description :
 ### asyncio package  :
 
 + we only can use __await__ before a ASYNC an function .
@@ -33,33 +33,33 @@ python rhyme_finder.py
 
 ## Sync :
 in sync , childs has to wait for their turn .
-children will get married in order : 1 , 2, 3 , 4
-child_1 married after 2 years
-child_2 married after 8 years
-child_3 married after 2 years
-child_4 married after 1 years
+children will get married in order : 1 , 2, 3 , 4 <br>
+child_1 married after 2 years <br>
+child_2 married after 8 years <br>
+child_3 married after 2 years <br>
+child_4 married after 1 years <br>
 
-total time will be sumation of all times : 
-sum (2 , 8 , 2 , 1) = 
-executed in 13.034747699974105 seconds
+total time will be sumation of all times :  <br>
+sum (2 , 8 , 2 , 1) =  <br>
+executed in 13.034747699974105 seconds <br>
 
 
 
 ## Async :
-in async  , childs don't need to wait at all . and they get marry when ever they want .
-child_3 married after 0 years
-child_2 married after 2 years
-child_1 married after 7 years
-child_4 married after 8 years
-
-total time is equal to the max time of all children :
-max( 0 , 2 ,  7 , 8 ) =
-executed in 8.069982000044547 seconds
+in async  , childs don't need to wait at all . and they get marry when ever they want . <br>
+child_3 married after 0 years<br>
+child_2 married after 2 years<br>
+child_1 married after 7 years<br>
+child_4 married after 8 years<br>
+<br>
+total time is equal to the max time of all children :<br>
+max( 0 , 2 ,  7 , 8 ) =<br>
+executed in 8.069982000044547 seconds<br>
 
 
 ## conclusion : 
 
-async functions runs faster than sync ones , bc async wont wait for running another function to run .
+async functions runs faster than sync ones , bc async wont wait for running another function to run .<br>
 in async , functions run simultaneously at the same time .
 
 ![img](assets/sync_async.png)
