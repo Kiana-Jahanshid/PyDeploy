@@ -2,7 +2,7 @@
 
 FROM python
 
-WORKDIR /counter_app
+WORKDIR /8_streamlit/counter_app
 RUN git clone https://github.com/Kiana-Jahanshid/PyDeploy.git .
 
 #RUN pip install -r requirements.txt
