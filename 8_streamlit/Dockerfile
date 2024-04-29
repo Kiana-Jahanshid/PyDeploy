@@ -1,11 +1,11 @@
 # app/Dockerfile
 
-FROM python
+FROM python:3.9
 
 WORKDIR /8_streamlit/counter_app
 RUN git clone https://github.com/Kiana-Jahanshid/PyDeploy.git .
 
-RUN pip install -r ./requirements.txt
+#RUN pip install -r ./requirements.txt
 RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
 
 EXPOSE 8501
