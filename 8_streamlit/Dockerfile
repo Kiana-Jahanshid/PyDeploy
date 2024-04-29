@@ -6,7 +6,7 @@ WORKDIR /8_streamlit/counter_app
 RUN git clone https://github.com/Kiana-Jahanshid/PyDeploy.git .
 
 #RUN pip install -r requirements.txt
-RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 EXPOSE 8501
 HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
