@@ -1,6 +1,6 @@
 # app/Dockerfile
 
-FROM python:3.9
+FROM python
 
 WORKDIR /8_streamlit/counter_app
 RUN git clone https://github.com/Kiana-Jahanshid/PyDeploy.git .
