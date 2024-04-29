@@ -10,5 +10,5 @@ RUN pip3 install -r requirements.txt
 
 EXPOSE 8501
 
-ENTRYPOINT ["streamlit", "run", "8_streamlit.counter_app.counter", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "counter", "--server.port=8501", "--server.address=0.0.0.0"]
 
