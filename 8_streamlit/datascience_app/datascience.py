@@ -1,15 +1,6 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 from PIL import Image
-
-# - [ ]  Upload a `.csv` file on the website
-# - [ ]  Convert csv data to `pandas dataframe`
-# - [ ]  Show dataframe in a table 
-# - [ ]  Draw a chart 
-# - [ ]  Write some information about your data science app in the website’s sidebar
-# - [ ]  Deploy it 🚀 using Streamlit Community Cloud
 
 
 st.set_page_config("Data Science App" , "📊")
