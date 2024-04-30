@@ -10,7 +10,7 @@ st.subheader("Exploring the Depths of Netflix: A Comprehensive Dataset of Movies
 st.write(" ")
 st.write(" ")
 
-df = pd.read_csv("netflix_titles.csv")
+df = pd.read_csv("datascience_app/netflix_titles.csv")
 df.to_csv().encode('utf-8')
 df = df[df.columns[:12]]
 df = df.dropna()
