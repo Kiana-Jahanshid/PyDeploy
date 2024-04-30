@@ -9,7 +9,13 @@ st.subheader("Exploring the Depths of Netflix: A Comprehensive Dataset of Movies
 
 st.write(" ")
 st.write(" ")
+'''
 
+The problem is you are hard coding the path of the bobrza1.csv and route.csv to the path on your computer
+ so when running the code on a different environment the path in not legal.
+The solution is to make location independent from running environment
+v
+'''
 dir_name = os.path.abspath(os.path.dirname(__file__))
 location = os.path.join(dir_name, 'netflix_titles.csv')
 
@@ -43,8 +49,9 @@ with st.sidebar:
     st.write("The Netflix Titles dataset is a comprehensive compilation of movies and TV shows available on Netflix, covering various aspects such as the title type, director, cast, country of production, release year, rating, duration, genres, and a brief description.")
     st.write(" This dataset is instrumental for analyzing trends in Netflix content, understanding genre popularity, and examining the distribution of content across different regions and time periods.")
 
-
-    image = Image.open("netflix.jpg")
+    dir_name = os.path.abspath(os.path.dirname(__file__))
+    image_location = os.path.join(dir_name, 'netflix.jpg')
+    image = Image.open(image_location)
 
 st.sidebar.image(image)
 
