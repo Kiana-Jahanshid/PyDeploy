@@ -9,13 +9,12 @@ st.subheader("Exploring the Depths of Netflix: A Comprehensive Dataset of Movies
 
 st.write(" ")
 st.write(" ")
-'''
 
-The problem is you are hard coding the path of the bobrza1.csv and route.csv to the path on your computer
- so when running the code on a different environment the path in not legal.
-The solution is to make location independent from running environment
-v
-'''
+#The problem is you are hard coding the path of the bobrza1.csv and route.csv to the path on your computer
+#so when running the code on a different environment the path in not legal.
+#The solution is to make location independent from running environment
+
+
 dir_name = os.path.abspath(os.path.dirname(__file__))
 location = os.path.join(dir_name, 'netflix_titles.csv')
 
