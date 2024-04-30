@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
-
+import os
 
 st.set_page_config("Data Science App" , "📊")
 st.title("🎭🎬 Netflix Movies and TV Shows")
@@ -10,7 +10,10 @@ st.subheader("Exploring the Depths of Netflix: A Comprehensive Dataset of Movies
 st.write(" ")
 st.write(" ")
 
-df = pd.read_csv("datascience_app/netflix_titles.csv")
+dir_name = os.path.abspath(os.path.dirname(__file__))
+location = os.path.join(dir_name, 'netflix_titles.csv')
+
+df = pd.read_csv(location)
 df.to_csv().encode('utf-8')
 df = df[df.columns[:12]]
 df = df.dropna()
