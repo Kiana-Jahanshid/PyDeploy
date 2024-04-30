@@ -68,30 +68,16 @@ npx liara deploy
 
 
 ## deployment (data science App):
-+ in case of selecting cloud :
+
+### How to run :
++ in localhost :
+run this command :
 ```
-1_ push code on github <br>
-your-repository/
-├── your_app.py
-└── requirements.txt
-
-
-
-for changing color theme  and other visualizations  , and change these parameter in config file : 
-your-repository/
-├── .streamlit/
-│   └── config.toml
-├── your_app.py
-└── requirements.txt
-
-
-
-2_  in this address : share.streamlit.io
-press new app
-paste github link 
-
-branch = main
-main file path = file_name.py
-subdomain : name of site
-
+streamlit run datascience.py
 ```
+then this url will be open ``` http://localhost:8501 ```
+
+<br>
++ deploy using " Streamlit Community Cloud " :
+push code on github . <br>
+then press deploy in this link  ``` http://localhost:8501 ```
