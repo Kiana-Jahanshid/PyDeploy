@@ -6,7 +6,6 @@ import json
 import requests
 
 
-
 async def rhymes_finder(user_input_word):
     print("....... rhyme started ....... ")
     url = f"https://rhyming.ir/api/rhyme-finder?api={rhyme_API_KEY}&w={user_input_word}&sb=1&mfe=2&eq=1"
@@ -15,10 +14,9 @@ async def rhymes_finder(user_input_word):
     rhymes_list = []
     for item in dictionary["data_items"] :
         rhymes_list.append(item["word"])    
-    print("rhymes_list : "  , rhymes_list) 
     await asyncio.sleep(1)
     print("....... rhyme finished .......")
-
+    return  rhymes_list
 # -------------------------------------------------------------------------------------------------------
 
 def get_states_list():
@@ -63,12 +61,11 @@ async def get_coordinates(state_name , city_name):
     print("🔺 latitude : " ,  city_info["latitude"]  )
     print( "🔺 longitude  : " , city_info["longitude"] )
     print(f"🔷 get_coordinate finished ....🔷")
-
+    return city_info["latitude"] , city_info["longitude"]
 
 async def main():
-    await asyncio.gather(rhymes_finder(user_input_word="آدینه") , get_coordinates(state_name="خوزستان" , city_name="ايرانشهر") )
+    await asyncio.gather(rhymes_finder(user_input_word="آدینه") , get_coordinates(state_name="خوزستان" , city_name="ايرانشهر"))
     print("main ended")
-
 
 
 if __name__ == "__main__" :
