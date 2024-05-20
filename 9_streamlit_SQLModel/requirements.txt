@@ -1,0 +1,5 @@
+sqlmodel
+streamlit
+streamlit_pdf_viewer
+streamlit_authenticator
+requests

@@ -56,5 +56,3 @@ if file is not None :
         image = Image.open(image_location)
 
     st.sidebar.image(image)
-
-
