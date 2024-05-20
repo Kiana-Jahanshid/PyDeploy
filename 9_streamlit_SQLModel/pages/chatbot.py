@@ -36,7 +36,8 @@ import os
 @st.cache_resource
 def connecting_to_db():
     # CONNECTING TO DATABASE
-    engine = create_engine(url="sqlite:///database.db")
+    # this database will save chats between user and ai-assistant
+    engine = create_engine(url="postgresql://root:aD81gNCc4Z2V5RkXRfP1Uft4@user-assistant-chats:5432/postgres")#"sqlite:///database.db"
     SQLModel.metadata.create_all(engine)
     return engine
 

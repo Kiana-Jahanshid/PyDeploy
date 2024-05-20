@@ -19,7 +19,7 @@ class Id():
 
 @st.cache_resource
 def connect_db():
-    engine = create_engine(url="sqlite:///auth_database.db" , echo=True)
+    engine = create_engine(url= "postgresql://root:iiHoGm4235pme3TKHs2tSBGh@ai-assistant:5432/postgres" , echo=True)#"sqlite:///auth_database.db"
     SQLModel.metadata.create_all(engine)
     return engine
 

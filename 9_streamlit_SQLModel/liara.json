@@ -1,0 +1,8 @@
+{
+    "disks": [
+      {
+        "name": "bot-disk",
+        "mountTo": "liaraa"
+      }
+    ]
+  }
