@@ -1,0 +1,69 @@
+services:
+
+  falhafez:
+    image: fal
+    container_name: fal_hafez
+    build:
+      context: dockerfiles/fal/
+      dockerfile: Dockerfile
+    networks:
+      - mynetwork_micros
+    volumes:
+      - .:/app1
+    ports: 
+      - "8081:8081"
+
+      
+
+  khayam:
+    image: khayam
+    container_name: khayam
+    build:
+      context: dockerfiles/khayam/
+      dockerfile: Dockerfile
+    networks:
+      - mynetwork_micros
+    ports:
+      - "8082:8082"
+    volumes:
+      - ".:/app2"
+ 
+
+  main:
+    image: main
+    container_name: main
+    build:
+      context: dockerfiles/main/
+      dockerfile: Dockerfile
+    networks:
+      - mynetwork_micros
+    volumes:
+      - ".:/app3"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - khayam
+      - falhafez
+
+
+
+  qrcode:
+    image: qrcode
+    container_name: qrcode
+    build:
+      context: dockerfiles/qrcode/
+      dockerfile: Dockerfile
+    networks:
+      - mynetwork_micros
+    volumes:
+      - ".:/app4"
+    ports:
+      - "8083:8083"
+    depends_on:
+      - main
+
+
+networks: 
+  mynetwork_micros :
+
+
