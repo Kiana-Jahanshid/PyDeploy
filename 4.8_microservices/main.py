@@ -12,7 +12,7 @@ NO_PROXY = {
 app = Flask(__name__)
 
 
-@app.route("/merge" , methods=["GET", "POST"])
+@app.route("/json_result" , methods=["GET", "POST"])
 def result():
     fal =   requests.get("http://127.0.0.1:8081/fal")#, verify=False , proxies=NO_PROXY ,allow_redirects=False
     today =  requests.get("http://127.0.0.1:8082/today")

@@ -7,9 +7,9 @@ from io import BytesIO
 
 app = Flask(__name__)
 
-@app.route("/qr" , methods=["GET", "POST"])
+@app.route("/generate" , methods=["GET", "POST"])
 def text_2_qrcode():
-    response = requests.get("http://127.0.0.1:8080/merge")
+    response = requests.get("http://127.0.0.1:8080/json_result")
     text = response.text
     qrcode_image = qrcode.make(text)
     img = BytesIO()    
