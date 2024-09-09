@@ -1,0 +1,10 @@
+mmcv
+mmdet
+mmcv-full
+torch
+onnx
+cython
+numpy
+torchvision
+yapf
+scipy

@@ -1,0 +1,7 @@
+*.onnx
+*.pt
+*.h5
+*.zip
+*.pth
+data/
+scrfd/tools/data/

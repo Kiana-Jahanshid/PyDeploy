@@ -1,0 +1,12 @@
+onnx
+onnxruntime
+onnxruntime-gpu
+onnxscript
+opset
+scikit-learn
+skl2onnx
+tf2onnx
+torch
+ultralytics
+pillow
+tensorflow
