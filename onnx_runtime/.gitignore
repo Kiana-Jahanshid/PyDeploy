@@ -2,3 +2,4 @@
 *.onnx
 *.pth
 *.pt
+/models
